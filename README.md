@@ -2,9 +2,7 @@
 This repo is built to generate necessary libraries to use alongside the
 USEPA CRAN mirror for cloud.gov posted here: https://github.com/USEPA/cflinuxfs3-CRAN
 
-A successful workflow run produces the packages needed as an artifact.
-
-Place the .tar.gz files from that artifact into a folder called "lib" in your R Shiny code directory for use on cloud.gov.
+Place the lib folder from this repo in your R Shiny code directory for use on cloud.gov.
 
 Additionally, add the following to your first R code (in EPA we typically use a file called shiny.R):
 ```

@@ -1,3 +1,5 @@
+name: generate-r-library-files
+
 on:
   workflow_dispatch
 
