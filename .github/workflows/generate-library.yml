@@ -25,7 +25,7 @@ jobs:
         run: chmod +x lib_tar.sh
 
       - name: Create lib directory
-        run: mkdir lib
+        run: mkdir r-lib
 
       - name: Run lib_tar.sh for each of the files needed
         run: |
@@ -40,4 +40,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: r-lib
-          path: lib
+          path: r-lib
