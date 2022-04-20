@@ -32,11 +32,10 @@ print(list.files(lib_dir))
 ## If a library you need is still missing
 If you are still missing a necessary library, cloud.gov should produce error messages like this:
 
->Loading required package: sf
-Error: package or namespace load failed for "sf" in dyn.load(file, DLLpath = DLLpath, ...):
-unable to load shared object '/home/vcap/deps/0/r/library/sf/libs/sf.so':
-libgdal.so.26: cannot open shared object file: No such file or directory
-Error: package "sf" could not be loaded
+>Loading required package: sfError: package or namespace load failed for "sf" in dyn.load(file, DLLpath = DLLpath, ...):<br/>
+unable to load shared object '/home/vcap/deps/0/r/library/sf/libs/sf.so':<br/>
+libgdal.so.26: cannot open shared object file: No such file or directory<br/>
+Error: package "sf" could not be loaded<br/>
 Execution halted
 
 To add that library, we will need to know the specific package filename (here, the "libgdal.so.26")
