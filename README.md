@@ -38,4 +38,4 @@ libgdal.so.26: cannot open shared object file: No such file or directory<br/>
 Error: package "sf" could not be loaded<br/>
 Execution halted
 
-To add that library, we will need to know the specific package filename (here, the "libgdal.so.26")
+To add that library, we will need to know the specific library filename (here, the "libgdal.so.26")
