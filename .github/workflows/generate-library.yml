@@ -13,8 +13,8 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt update
+          sudo apt-get -y install x11-utils
           sudo apt install software-properties-common -y
-          sudo apt-get x11-utils
           sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
           sudo apt-get update
           sudo apt-get -y install libgdal-dev libgeos-dev libproj-dev libudunits2-dev libnlopt-dev
@@ -27,7 +27,7 @@ jobs:
 
       - name: Create lib directory
         run: mkdir r-lib
-        
+
       - name: Look for X11
         run: find / -iname *x11.so* 2>/dev/null
 
