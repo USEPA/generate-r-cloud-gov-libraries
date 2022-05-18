@@ -42,3 +42,4 @@ jobs:
         with:
           name: r-lib
           path: r-lib
+          retention-days: 30
