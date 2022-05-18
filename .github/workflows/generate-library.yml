@@ -13,7 +13,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt update
-          sudo apt-get -y install x11-utils
+          sudo apt-get -y install libx11-dev
           sudo apt install software-properties-common -y
           sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
           sudo apt-get update
