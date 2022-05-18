@@ -28,9 +28,6 @@ jobs:
       - name: Create lib directory
         run: mkdir r-lib
 
-      - name: Look for X11
-        run: find / -iname *x11.so* 2>/dev/null
-
       - name: Run lib_tar.sh for each of the files needed
         run: |
           for L in $LIBS
@@ -38,7 +35,7 @@ jobs:
             find / -iname $L 2>/dev/null | xargs -I {} ./lib_tar.sh {}
           done
         env:
-          LIBS: libgdal.so.26 libgeos_c.so libgeos-3.8.0.so libnlopt.so.0 libproj.so libudunits2.so.0 proj.db
+          LIBS: libgdal.so.26 libgeos_c.so libgeos-3.8.0.so libnlopt.so.0 libproj.so libudunits2.so.0 proj.db libX11.so.6.3.0
 
       - name: Upload files as an Artifact
         uses: actions/upload-artifact@v2
