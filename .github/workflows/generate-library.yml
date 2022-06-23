@@ -1,7 +1,9 @@
 name: generate-r-library-files
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
+  repository_dispatch:
+    types: [test-trigger]
 
 jobs:
   generate_library:
