@@ -20,33 +20,28 @@ jobs:
           add-apt-repository ppa:git-core/ppa
           apt-get update
           apt-get -y install libgdal-dev libgeos-dev libproj-dev libudunits2-dev libnlopt-dev
-          git config --global --add safe.directory /__w/cflinuxfs3-CRAN/cflinuxfs3-CRAN
 
       - name: Check out code
         uses: actions/checkout@v3
 
-      - name: Make lib_tar.sh executable
-        run: chmod +x lib_tar.sh
+      - name: Make lib_generate.sh executable
+        run: chmod +x lib_generate.sh
 
-      - name: Delete existing vendor_r
-        run: |
-          if [ -d "lib" ]; then rm -fr lib; fi
-          mkdir lib
+      - name: Create r-lib
+        run: mkdir r-lib
 
-      - name: Run lib_tar.sh for each of the files needed
+      - name: Run lib_generate.sh for each of the files needed
         run: |
           for L in $LIBS
           do
-            find / -iname $L 2>/dev/null | xargs -I {} ./lib_tar.sh {}
+            find / -iname $L 2>/dev/null | xargs -I {} ./lib_generate.sh {}
           done
         env:
           LIBS: libgdal.so.26 libgeos_c.so libgeos-3.8.0.so libnlopt.so.0 libproj.so libudunits2.so.0 proj.db
 
-      - name: Commit & Push
-        if: ${{ success() }}
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add lib
-          git commit -m "Automated workflow from GitHub Actions to create libraries"
-          git push
+      - name: Upload files as an Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: r-lib
+          path: r-lib
+          retention-days: 30
