@@ -14,11 +14,13 @@ jobs:
     steps:
       - name: Install dependencies
         run: |
-          sudo apt update
-          sudo apt install software-properties-common -y
-          sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
-          sudo apt-get update
-          sudo apt-get -y install libgdal-dev libgeos-dev libproj-dev libudunits2-dev libnlopt-dev
+          apt update
+          apt install software-properties-common -y
+          add-apt-repository ppa:ubuntugis/ubuntugis-unstable
+          add-apt-repository ppa:git-core/ppa
+          apt-get update
+          apt-get -y install libgdal-dev libgeos-dev libproj-dev libudunits2-dev libnlopt-dev
+          git config --global --add safe.directory /__w/cflinuxfs3-CRAN/cflinuxfs3-CRAN
 
       - name: Check out code
         uses: actions/checkout@v3
