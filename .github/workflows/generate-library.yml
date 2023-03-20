@@ -38,7 +38,7 @@ jobs:
             find / -iname $L 2>/dev/null | xargs -I {} ./lib_tar.sh {}
           done
         env:
-          LIBS: libgdal.so.26 libgeos_c.so libgeos-3.8.0.so libnlopt.so.0 libproj.so libudunits2.so.0 proj.db rJava.so libjvm.so
+          LIBS: libgdal.so.26 libgeos_c.so libgeos-3.8.0.so libnlopt.so.0 libproj.so libudunits2.so.0 proj.db
 
       - name: Commit & Push
         if: ${{ success() }}
