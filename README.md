@@ -1,3 +1,5 @@
+DEPRECATED - This repository is no longer being maintained and is available for reuse. Functionality here has been combined into the [R Shiny Cloud.gov Instructions](https://github.com/USEPA/r-shiny-cloud-gov-instructions)
+
 # Generate R Cloud.gov Libraries
 This repo is built to generate necessary libraries to use alongside the
 USEPA CRAN mirror for cloud.gov posted here: https://github.com/USEPA/cflinuxfs3-CRAN
